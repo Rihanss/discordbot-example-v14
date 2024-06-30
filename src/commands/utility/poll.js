@@ -39,8 +39,6 @@ module.exports = class Poll extends Command {
 	}
 
 	async run(client, interaction) {
-		if (!this.run) throw new RangeError('Expected a run method');
-
 		await interaction.deferReply();
 
 		const question = interaction.options.getString('question');

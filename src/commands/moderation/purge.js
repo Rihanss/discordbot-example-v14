@@ -8,7 +8,7 @@ module.exports = class Purge extends Command {
 		super(client, {
 			data: new SlashCommandBuilder()
 				.setName('purge')
-				.setDescription('[Holo|Moderation] Remove up to 100 messages in the channel')
+				.setDescription('Remove up to 100 messages in the channel')
 				.setDMPermission(true)
 				.addIntegerOption(option => option
 					.setName('number')

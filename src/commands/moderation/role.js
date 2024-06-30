@@ -8,11 +8,11 @@ module.exports = class Role extends Command {
 		super(client, {
 			data: new SlashCommandBuilder()
 				.setName('role')
-				.setDescription('[Holo|Moderation] Add / Remove role from specified user')
+				.setDescription('Add / Remove role from specified user')
 				.setDMPermission(true)
 				.addSubcommand(subcommand => subcommand
 					.setName('add')
-					.setDescription('[Holo|Moderation] Add role from specified user')
+					.setDescription('Add role from specified user')
 					.addUserOption(option => option
 						.setName('user')
 						.setDescription('User you want to add the role')
@@ -30,7 +30,7 @@ module.exports = class Role extends Command {
 				)
 				.addSubcommand(subcommand => subcommand
 					.setName('remove')
-					.setDescription('[Holo|Moderation] Remove role from specified user')
+					.setDescription('Remove role from specified user')
 					.addUserOption(option => option
 						.setName('user')
 						.setDescription('User you want to remove the role')

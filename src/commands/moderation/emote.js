@@ -8,7 +8,7 @@ module.exports = class AddEmote extends Command {
         super(client, {
             data: new SlashCommandBuilder()
                 .setName('emote')
-                .setDescription('[Holo | Moderation] Add emote to your server using this command!')
+                .setDescription('Add emote to your server using this command!')
                 .setDMPermission(true)
                 .addAttachmentOption(option => option
                     .setName('emote')

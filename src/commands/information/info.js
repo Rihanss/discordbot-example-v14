@@ -10,29 +10,29 @@ module.exports = class Info extends Command {
 		super(client, {
 			data: new SlashCommandBuilder()
 				.setName('info')
-				.setDescription('[Holo|Information] See the information')
+				.setDescription('See the information')
 				.addSubcommand(subcommand => subcommand
 					.setName('server')
 					.setDescription('See information about current server'))
 				.addSubcommand(subcommand => subcommand
 					.setName('user')
-					.setDescription('[Holo|Information] See information about specific user')
+					.setDescription('See information about specific user')
 					.addUserOption(option => option
 						.setName('user')
 						.setDescription('The user you want to check the information')))
 				.addSubcommand(subcommand => subcommand
 					.setName('role')
-					.setDescription('[Holo|Information] See information about a role')
+					.setDescription('See information about a role')
 					.addRoleOption(option => option
 						.setName('role')
 						.setDescription('The role you want to check')))
 				.addSubcommand(subcommand => subcommand
 					.setName('emotelist')
-					.setDescription('[Holo|Information] Show list of the server emote.'),
+					.setDescription('Show list of the server emote.'),
 				)
 				.addSubcommand(subcommand => subcommand
 					.setName('anime')
-					.setDescription('[Holo | Information] See information about anime')
+					.setDescription('See information about anime')
 					.addStringOption(option => option
 						.setName('anime')
 						.setDescription('The anime information you want to check.'))),

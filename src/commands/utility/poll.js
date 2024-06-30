@@ -8,7 +8,7 @@ module.exports = class Poll extends Command {
 		super(client, {
 			data: new SlashCommandBuilder()
 				.setName('poll')
-				.setDescription('[Holo|Utility]  Create quick polls in Discord')
+				.setDescription('Create quick polls in Discord')
 				.setDMPermission(true)
 				.addStringOption(option => option
 					.setName('question')

@@ -10,7 +10,7 @@ module.exports = class Stats extends Command {
 		super(client, {
 			data: new SlashCommandBuilder()
 				.setName('stats')
-				.setDescription('[Holo: Information] Check statistics of the bot')
+				.setDescription('Check statistics of the bot')
 				.setDMPermission(true),
 			usage: 'stats',
 			category: 'Information',

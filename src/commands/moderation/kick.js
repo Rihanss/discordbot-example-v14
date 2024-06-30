@@ -9,7 +9,7 @@ module.exports = class Kick extends Command {
 		super(client, {
 			data: new SlashCommandBuilder()
 				.setName('kick')
-				.setDescription('[Holo| Moderation] Kicks a member from the server')
+				.setDescription('Kicks a member from the server')
 				.setDMPermission(true)
 				.addUserOption(option => option
 					.setName('user')

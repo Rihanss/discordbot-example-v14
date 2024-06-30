@@ -7,7 +7,7 @@ module.exports = class Avatar extends Command {
 		super(client, {
 			data: new SlashCommandBuilder()
 				.setName('avatar')
-				.setDescription('[Holo|Utility] Show your or others avatar')
+				.setDescription('Show your or others avatar')
 				.setDMPermission(true)
 				.addUserOption(option => option.setName('user')
 					.setDescription('The user you want to view its avatar')

@@ -9,7 +9,7 @@ module.exports = class Ban extends Command {
 		super(client, {
 			data: new SlashCommandBuilder()
 				.setName('ban')
-				.setDescription('[Holo|Moderation] Ban a member from the server.')
+				.setDescription('Ban a member from the server.')
 				.setDMPermission(true)
 				.addUserOption(option => option
 					.setName('user')

@@ -9,7 +9,7 @@ module.exports = class Help extends Command {
 		super(client, {
 			data: new SlashCommandBuilder()
 				.setName('help')
-				.setDescription('[Holo:Information] Returns command information.')
+				.setDescription('Returns command information.')
 				.setDMPermission(true)
 				.addStringOption(option => option
 					.setName('command')

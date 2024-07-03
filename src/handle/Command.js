@@ -1,49 +1,76 @@
+// Import the BaseCommand class to ensure that commands extend it
 const BaseCommand = require('../structures/CommandClass');
+// Import path module to handle file and directory paths
 const path = require('path');
+// Import readdir and lstat functions from fs.promises for file system operations
 const { readdir, lstat } = require('fs').promises;
+// Import the Discord.js library
 const Discord = require('discord.js');
 
+// Define and export the CommandClass
 module.exports = class CommandClass {
-	constructor(client) {
-		this.client = client;
-	}
+    // Constructor method to initialize the CommandClass instance
+    constructor(client) {
+        // Store the client instance which represents the Discord bot
+        this.client = client;
+    }
 
-	async build(dir) {
-		const filePath = path.join(__dirname, dir);
-		const files = await readdir(filePath);
+    // Asynchronous method to build commands from files in the specified directory
+    async build(dir) {
+        // Create the full path to the directory containing command files
+        const filePath = path.join(__dirname, dir);
+        // Read the contents of the directory
+        const files = await readdir(filePath);
 
-		for (const file of files) {
-			const stat = await lstat(path.join(filePath, file));
-			if (stat.isDirectory()) this.build(path.join(dir, file));
-			if (file.endsWith('.js')) {
-				const Command = require(path.join(filePath, file));
+        // Iterate over each file in the directory
+        for (const file of files) {
+            // Get the full path to the file
+            const fullPath = path.join(filePath, file);
+            // Get file statistics (e.g., whether it's a directory)
+            const stat = await lstat(fullPath);
 
-				if (Command.prototype instanceof BaseCommand) {
-					const cmd = new Command(this.client);
+            // If the file is a directory, recursively build commands from it
+            if (stat.isDirectory()) {
+                this.build(path.join(dir, file));
+            }
+            // If the file is a JavaScript file, process it as a command
+            if (file.endsWith('.js')) {
+                // Dynamically import the command file
+                const Command = require(fullPath);
 
-					const cmdData = cmd.data.toJSON();
+                // Check if the imported class extends the BaseCommand class
+                if (Command.prototype instanceof BaseCommand) {
+                    // Create a new instance of the command class
+                    const cmd = new Command(this.client);
 
-					const cmdSet = {
-						name: cmdData.name,
-						description: cmdData.description,
-						options: cmdData.options,
-						defaultPermission: cmdData.default_permission,
-						contextDescription: cmd.contextDescription,
-						usage: cmd.usage,
-						category: cmd.category,
-						permissions: cmd.permissions,
-						hidden: cmd.hidden || false,
-						run: cmd.run,
-					};
+                    // Convert the command data to a JSON object
+                    const cmdData = cmd.data.toJSON();
 
-					this.client.commands.set(cmdSet.name, cmdSet);
+                    // Create a command object with necessary properties
+                    const cmdSet = {
+                        name: cmdData.name, // The name of the command
+                        description: cmdData.description, // Description of the command
+                        options: cmdData.options, // Command options (parameters)
+                        defaultPermission: cmdData.default_permission, // Default permission for the command
+                        contextDescription: cmd.contextDescription, // Context menu description (if applicable)
+                        usage: cmd.usage, // How the command should be used
+                        category: cmd.category, // Category under which the command is grouped
+                        permissions: cmd.permissions, // Permissions required to use the command
+                        hidden: cmd.hidden || false, // Whether the command should be hidden from help lists
+                        run: cmd.run, // The run method to execute the command
+                    };
 
-					if (!this.client.helps.has(cmdSet.category)) {
-						this.client.helps.set(cmdSet.category, new Discord.Collection());
-					}
-					this.client.helps.get(cmdSet.category).set(cmdSet.name, cmdSet);
-				}
-			}
-		}
-	}
+                    // Add the command to the client's commands collection
+                    this.client.commands.set(cmdSet.name, cmdSet);
+
+                    // Check if the category exists in the helps collection; if not, create a new collection for it
+                    if (!this.client.helps.has(cmdSet.category)) {
+                        this.client.helps.set(cmdSet.category, new Discord.Collection());
+                    }
+                    // Add the command to the appropriate category in the helps collection
+                    this.client.helps.get(cmdSet.category).set(cmdSet.name, cmdSet);
+                }
+            }
+        }
+    }
 };

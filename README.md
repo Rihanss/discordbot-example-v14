@@ -15,6 +15,7 @@ Before you begin, ensure you have met the following requirements:
 - You have a [Discord](https://discord.com/) account.
 - You have latest [Node.js](https://nodejs.org/) installed.
 - You have [npm](https://www.npmjs.com/) installed.
+- You have [git](https://git-scm.com) installed.
 
 ## Setting Up the Bot
 

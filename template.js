@@ -1,3 +1,5 @@
+// This file is used command template incase if you want to make more commands.
+
 const Command = require('../../structures/CommandClass');
 const { SlashCommandBuilder } = require('@discordjs/builders');
 

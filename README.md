@@ -93,7 +93,12 @@ If you have found an issue with using this Discord bot example, feel free to sub
 This repo is maintained in my spare time. If you like the example I've provided, please give it a star :)
 
 ## License
-The `MIT` license applies to this repository. Please see the `LICENSE` file to learn more.
+
+This project is licensed under the MIT License. 
+
+The MIT License is a permissive license that allows for reuse, modification, and distribution of the software. You are free to use this software in any project, personal or commercial, as long as you include the original license and copyright notice in any distributed copies or substantial portions of the software.
+
+For more details, see the [LICENSE](LICENSE) file.
 
 ## Check out my discord bot!
 [![Discord Bots](https://top.gg/api/widget/519521318719324181.svg)](https://top.gg/bot/519521318719324181)

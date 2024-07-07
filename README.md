@@ -1,8 +1,8 @@
-# Discord Bot Setup
+# Discord Bot Example
 
-This repository contains the code for a Discord bot. Follow the instructions below to set up and run the bot.
+Discord bot example made in Discord.js (Javascript). Follow the instructions below to set up and run the discord botbot.
 
-## Features
+## Features 📈
 
 - Easy to Setup
 - Made for Slash Commands
@@ -17,7 +17,7 @@ Before you begin, ensure you have met the following requirements:
 - You have [npm](https://www.npmjs.com/) installed.
 - You have [git](https://git-scm.com) installed.
 
-## Setting Up the Bot
+## Step 1: Setting Up the Bot
 
 1. Go to the [Discord Developer Portal](https://discord.com/developers/applications).
 2. Click on "New Application" and give it a name.
@@ -89,7 +89,7 @@ node deploy
 
 If you have found an issue with using this Discord bot example, feel free to submit an [issue here](https://github.com/Rihanss/discordbot-example-v14/issues) or a [pull request](https://github.com/Rihanss/discordbot-example-v14/pulls). I'll be happy to take a look
 
-## Thanks!
+## Thanks! ❤️
 This repo is maintained in my spare time. If you like the example I've provided, please give it a star :)
 
 ## License

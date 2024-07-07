@@ -1,6 +1,6 @@
 # Discord Bot Example
 
-Discord bot example made in Discord.js (Javascript). Follow the instructions below to set up and run the discord botbot.
+Discord bot example made in Discord.js (Javascript). Follow the instructions below to set up and run the discord bot.
 
 ## Features 📈
 

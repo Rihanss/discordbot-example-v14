@@ -79,6 +79,26 @@ node deploy
 
 > This also creates commands needed for your Discord bot to respond.
 
+# Troubleshooting
+
+### Error: Used disallowed intents
+The error `Error: Used disallowed intents` occurs when your Discord bot is trying to use Gateway Intents that haven't been enabled or aren't allowed for your bot. Discord introduced Gateway Intents to give developers more control over what events their bot receives. However, some intents are considered "privileged" and require you to enable them explicitly in your bot's settings on the Discord Developer Portal.
+
+```shell
+          error: new Error("Used disallowed intents")
+                 ^
+
+Error: Used disallowed intents
+```
+
+Steps to Fix the Error
+
+- Go to the [Discord Developer Portal](https://discord.com/developers/applications).
+- Select your bot application.
+- Navigate to the "Bot" tab on the left.
+- Scroll down to the "Privileged Gateway Intents" section.
+- Enable the all intents.
+
 # Guides 📚
 
 - [Creating slash commands](https://discordjs.guide/creating-your-bot/slash-commands.html)

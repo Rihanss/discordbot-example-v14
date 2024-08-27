@@ -10,7 +10,7 @@ module.exports = class ReadyEvent extends Event {
 	constructor(client) {
 		super(client, {
 			name: 'ready', // Event name
-			once: true,    // Indicates that this event should only be handled once
+			once: true, // Indicates that this event should only be handled once
 		});
 	}
 

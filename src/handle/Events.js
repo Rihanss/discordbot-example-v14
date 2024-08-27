@@ -48,7 +48,7 @@ module.exports = class EventClass {
                     // If event.once is true, use client.once (for one-time events)
                     // Otherwise, use client.on (for recurring events)
                     // Bind the event's run method to the event instance
-                    event.once ? 
+                    event.once ?
                         this.client.once(event.name, event.run.bind(event)) :
                         this.client.on(event.name, event.run.bind(event));
                 }

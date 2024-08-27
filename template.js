@@ -1,5 +1,7 @@
+/* eslint-disable no-unused-vars */
+
 // Command Template
-// This template is designed to help you create new commands for your Discord bot. 
+// This template is designed to help you create new commands for your Discord bot.
 // To use this template:
 // 1. Copy this file and rename it to match your command's purpose (e.g., `PingCommand.js`).
 // 2. Update the following sections as necessary:
@@ -39,7 +41,7 @@ module.exports = class Example extends Command {
 };
 
 // Event Template
-// This template is designed to help you create new event handlers for your Discord bot. 
+// This template is designed to help you create new event handlers for your Discord bot.
 // To use this template:
 // 1. Copy this file and rename it to match the event you want to handle (e.g., `GuildMemberAdd.js`).
 // 2. Update the following sections as necessary:

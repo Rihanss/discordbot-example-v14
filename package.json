@@ -1,6 +1,6 @@
 {
-	"name": "holobot",
-	"version": "3.0.0",
+	"name": "example-bot",
+	"version": "1.0.0",
 	"scripts": {
 		"start": "node index.js",
 		"lint": "eslint . --ext .js",

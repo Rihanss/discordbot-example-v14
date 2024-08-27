@@ -10,7 +10,7 @@ module.exports = class InteractionCreate extends Event {
 	constructor(client) {
 		super(client, {
 			name: 'interactionCreate', // Event name
-			category: 'interaction',   // Event category
+			category: 'interaction', // Event category
 		});
 	}
 
@@ -25,7 +25,7 @@ module.exports = class InteractionCreate extends Event {
 
             // Ignore interactions from bots
 			if (interaction.user.bot) return;
-            
+
             // Ensure the interaction is from a guild (server); if not, send an error message
 			if (!interaction.inGuild() && interaction.type === InteractionType.ApplicationCommand) {
 				return interaction.reply({ content: 'You must be in a server to use commands.' });
@@ -41,7 +41,8 @@ module.exports = class InteractionCreate extends Event {
 			try {
                 // Execute the command
 				await command.run(client, interaction);
-			} catch (e) {
+			}
+			catch (e) {
                 // Log the error and send an error message if the command fails
 				console.log(e);
 				await interaction.followUp({ content: `An error has occurred.\n\n**\`${e.message}\`**` });

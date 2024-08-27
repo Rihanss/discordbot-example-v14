@@ -230,7 +230,8 @@ class Util {
 			if (!body.data || !body.data.length) return undefined;
 			const img = body.data[Math.floor(Math.random() * body.data.length)];
 			return `http://imgur.com/${img.hash}${img.ext.replace(/\?.*/, '')}`;
-		} catch (error) {
+		}
+		catch (error) {
 			console.error('Failed to fetch subreddit image:', error);
 			return undefined;
 		}

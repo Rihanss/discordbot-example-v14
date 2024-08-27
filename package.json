@@ -2,9 +2,10 @@
 	"name": "holobot",
 	"version": "3.0.0",
 	"scripts": {
-		"start": "node deploy.js",
+		"start": "node index.js",
 		"lint": "eslint . --ext .js",
-		"lint:fix": "eslint . --ext .js --fix"
+		"lint:fix": "eslint . --ext .js --fix",
+		"test": "npm run lint"
 	},
 	"dependencies": {
 		"@discordjs/builders": "^1.6.1",
